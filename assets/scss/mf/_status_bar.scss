@@ -1,0 +1,144 @@
+@import '../includes/variables';
+
+&-status-bar-container {
+  margin-bottom: 80px;
+}
+
+&-status-bar {
+  background-color: $MF_StatusBar_BackgroundColor;
+  padding: 20px 30px;
+
+  &.mf-enabled {
+    .mf-status-bar-switch-desc {
+      color: $MF_StatusBar_Switch_Disable_Color;
+
+      &.mf-status-enable {
+        font-weight: 700;
+        color: $MF_StatusBar_Switch_Active_Color;
+      }
+    }
+
+    .mf-info-enabled {
+      display: inline-block;
+    }
+
+    .mf-info-disabled {
+      display: none;
+    }
+  }
+
+  &.mf-disabled {
+    .mf-status-bar-switch-desc {
+      color: $MF_StatusBar_Switch_Disable_Color;
+
+      &.mf-status-disable {
+        font-weight: 700;
+        color: $MF_StatusBar_Switch_Active_Color;
+      }
+    }
+
+    .mf-info-enabled {
+      display: none;
+    }
+
+    .mf-info-disabled {
+      display: inline-block;
+    }
+  }
+
+  &.mf-blocked {
+    .mf-status-bar-switch-desc {
+      color: $MF_StatusBar_Switch_Inactive_Color;
+
+      &.mf-status-blocked {
+        font-weight: 700;
+      }
+    }
+
+    .mf-info-enabled {
+      display: inline-block;
+    }
+
+    .mf-info-disabled {
+      display: none;
+    }
+  }
+
+  .mf-status-bar-desc {
+    float: left;
+    width: 70%;
+
+    @media all and (max-width: $screen-sm-max) {
+      float: none;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 28px;
+      margin: 0;
+
+      @media all and (max-width: $screen-sm-max) {
+        line-height: 22px;
+      }
+
+      strong {
+        color: $MF_Theme_Color;
+      }
+    }
+  }
+
+  .mf-status-bar-switch {
+    float: left;
+    min-width: 151px;
+    text-align: right;
+    width: 30%;
+
+    @media all and (max-width: $screen-sm-max) {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    &-container {
+      display: inline-block;
+    }
+
+    &-desc {
+      display: block;
+      float: left;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      line-height: 28px;
+      text-transform: uppercase;
+
+      &.mf-status-enable {
+        margin-right: 10px;
+      }
+
+      &.mf-status-disable {
+        margin-left: 10px;
+      }
+    }
+
+    &-button {
+      display: block;
+      float: left;
+    }
+  }
+}
+
+&-status-bar-danger {
+  height: auto;
+  margin-top: 10px;
+  overflow: hidden;
+
+  p {
+    color: $MF_StatusBar_Danger_Color;
+    font-size: 10px;
+    text-align: center;
+  }
+}

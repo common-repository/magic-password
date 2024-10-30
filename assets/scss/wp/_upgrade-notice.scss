@@ -1,0 +1,14 @@
+.update-message {
+  .mf-upgrade-notice {
+    & + p {
+      display: none;
+    }
+
+    p {
+      &::before {
+        content: '';
+        margin-right: 0;
+      }
+    }
+  }
+}

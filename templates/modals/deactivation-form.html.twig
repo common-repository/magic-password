@@ -1,0 +1,28 @@
+<div class="mf-modal-backdrop mf-deactivation-plugin-modal">
+    <div class="mf-modal-backdrop-content">
+        <div class="mf-modal mf-deactivation-modal" tabindex="-1">
+            <div class="mf-modal-content">
+                <div class="mf-modal-content-header">
+                    <i class="mf-icon mf-icon-delete-exclamation-mark"></i>
+                    <h6>We are sorry that you are leaving!</h6>
+                </div>
+                <p>Please tell us why:</p>
+                <div class="mf-deactivation-token">
+                    {{ url.make_form_nonce('send-deactivation-reason') | raw }}
+                </div>
+                <fieldset>
+                    <label><input type="radio" name="reason" value="not-working"> <span>It's not working for me.</span></label>
+                    <label><input type="radio" name="reason" value="how-it-works"> <span>I don't know how it works.</span></label>
+                    <label><input type="radio" name="reason" value="complicated"> <span>It's too much complicated.</span></label>
+                    <label><input type="radio" name="reason" value="looking"> <span>I'm looking for something else.</span></label>
+                    <label><input type="radio" name="reason" value="other"> <span>Other, please describe below:</span></label>
+                    <textarea name="reason-desc" placeholder="I deactivate this plugin because..." disabled="disabled"></textarea>
+                </fieldset>
+                <div class="mf-confirm-buttons">
+                    <button class="mf-js-deactivation-skip button button-secondary">Skip</button>
+                    <button class="mf-js-deactivation-send button button-primary" disabled="disabled">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

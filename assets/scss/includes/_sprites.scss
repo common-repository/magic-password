@@ -1,0 +1,198 @@
+.mf-icon {
+	background-image: url('../images/spritesheet.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+// ICON app-store
+@mixin icon-app-store() {
+	background-position: 0 -44px !important;
+}
+
+@mixin icon-app-store-mixin() {
+	background-position: 0 -44px;
+	height: 40px;
+	width: 135px;
+}
+
+.mf-icon-app-store {
+	background-position: 0 -44px;
+	height: 40px;
+	width: 135px;
+}
+// ICON checkbox-checked
+@mixin icon-checkbox-checked() {
+	background-position: -138px -84px !important;
+}
+
+@mixin icon-checkbox-checked-mixin() {
+	background-position: -138px -84px;
+	height: 24px;
+	width: 24px;
+}
+
+.mf-icon-checkbox-checked {
+	background-position: -138px -84px;
+	height: 24px;
+	width: 24px;
+}
+// ICON checkbox-unchecked
+@mixin icon-checkbox-unchecked() {
+	background-position: -138px -58px !important;
+}
+
+@mixin icon-checkbox-unchecked-mixin() {
+	background-position: -138px -58px;
+	height: 24px;
+	width: 24px;
+}
+
+.mf-icon-checkbox-unchecked {
+	background-position: -138px -58px;
+	height: 24px;
+	width: 24px;
+}
+// ICON delete-exclamation-mark
+@mixin icon-delete-exclamation-mark() {
+	background-position: -138px -30px !important;
+}
+
+@mixin icon-delete-exclamation-mark-mixin() {
+	background-position: -138px -30px;
+	height: 26px;
+	width: 26px;
+}
+
+.mf-icon-delete-exclamation-mark {
+	background-position: -138px -30px;
+	height: 26px;
+	width: 26px;
+}
+// ICON delete
+@mixin icon-delete() {
+	background-position: -20px -135px !important;
+}
+
+@mixin icon-delete-mixin() {
+	background-position: -20px -135px;
+	height: 16px;
+	width: 13px;
+}
+
+.mf-icon-delete {
+	background-position: -20px -135px;
+	height: 16px;
+	width: 13px;
+}
+// ICON error
+@mixin icon-error() {
+	background-position: 0 -86px !important;
+}
+
+@mixin icon-error-mixin() {
+	background-position: 0 -86px;
+	height: 47px;
+	width: 64px;
+}
+
+.mf-icon-error {
+	background-position: 0 -86px;
+	height: 47px;
+	width: 64px;
+}
+// ICON google-play
+@mixin icon-google-play() {
+	background-position: 0 0 !important;
+}
+
+@mixin icon-google-play-mixin() {
+	background-position: 0 0;
+	height: 42px;
+	width: 136px;
+}
+
+.mf-icon-google-play {
+	background-position: 0 0;
+	height: 42px;
+	width: 136px;
+}
+// ICON radio-checked
+@mixin icon-radio-checked() {
+	background-position: -138px -110px !important;
+}
+
+@mixin icon-radio-checked-mixin() {
+	background-position: -138px -110px;
+	height: 18px;
+	width: 18px;
+}
+
+.mf-icon-radio-checked {
+	background-position: -138px -110px;
+	height: 18px;
+	width: 18px;
+}
+// ICON radio-unchecked
+@mixin icon-radio-unchecked() {
+	background-position: 0 -135px !important;
+}
+
+@mixin icon-radio-unchecked-mixin() {
+	background-position: 0 -135px;
+	height: 18px;
+	width: 18px;
+}
+
+.mf-icon-radio-unchecked {
+	background-position: 0 -135px;
+	height: 18px;
+	width: 18px;
+}
+// ICON scanning-tips-login
+@mixin icon-scanning-tips-login() {
+	background-position: -138px 0 !important;
+}
+
+@mixin icon-scanning-tips-login-mixin() {
+	background-position: -138px 0;
+	height: 28px;
+	width: 29px;
+}
+
+.mf-icon-scanning-tips-login {
+	background-position: -138px 0;
+	height: 28px;
+	width: 29px;
+}
+// ICON scanning-tips
+@mixin icon-scanning-tips() {
+	background-position: -119px -86px !important;
+}
+
+@mixin icon-scanning-tips-mixin() {
+	background-position: -119px -86px;
+	height: 16px;
+	width: 16px;
+}
+
+.mf-icon-scanning-tips {
+	background-position: -119px -86px;
+	height: 16px;
+	width: 16px;
+}
+// ICON tick
+@mixin icon-tick() {
+	background-position: -66px -86px !important;
+}
+
+@mixin icon-tick-mixin() {
+	background-position: -66px -86px;
+	height: 33px;
+	width: 51px;
+}
+
+.mf-icon-tick {
+	background-position: -66px -86px;
+	height: 33px;
+	width: 51px;
+}

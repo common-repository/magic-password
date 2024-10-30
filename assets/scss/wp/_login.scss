@@ -1,0 +1,178 @@
+@import '../includes/variables';
+
+.mf-notice-error {
+  background: $WP_Notification_BackgroundColor;
+  border-left: 4px solid $WP_Notification_BorderColor;
+  box-shadow: 0 1px 1px 0 $WP_Notification_ShadowColor;
+  -webkit-box-shadow: 0 1px 1px 0 $WP_Notification_ShadowColor;
+  padding: 5px 12px;
+  margin: 5px 0 15px;
+}
+
+.login {
+  #login {
+    &.mf-with-qr {
+      p {
+        &#nav {
+          display: none;
+        }
+      }
+
+      form {
+        padding: 24px;
+
+        > p {
+          display: none;
+        }
+
+        div.user-pass-wrap {
+          display: none;
+        }
+
+        .mf-tip {
+          display: block;
+        }
+
+        .mf-qr-code-wrapper {
+          display: block !important;
+        }
+
+        .mf-login-button {
+          display: none;
+        }
+
+        .mf-normal-login {
+          display: block;
+        }
+
+        .mf-modal-backdrop {
+          p {
+            display: inherit;
+          }
+        }
+
+        .mf-pos-r {
+          text-align: center;
+        }
+      }
+    }
+
+    form {
+      position: relative;
+      overflow: visible;
+      margin-bottom: 70px;
+
+      .mf-login-button-wrapper {
+        position: relative;
+        width: 100%;
+
+        .mf-qr-code-wrapper {
+          position: relative;
+          text-align: center;
+          display: none;
+
+          &.mf-loading {
+            img {
+              display: none;
+            }
+
+            .mf-sk-circle {
+              display: block;
+            }
+
+            .login-magic-button,
+            .magic-btn-bg {
+              display: none;
+            }
+          }
+
+          > * {
+            position: static;
+          }
+
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+          }
+
+          .mf-sk-circle {
+            display: none;
+          }
+
+          .login-magic-button {
+            display: none;
+            bottom: 0;
+            left: 0;
+            top: 30px;
+            transform: none;
+            position: absolute;
+            width: 100%;
+
+            .button {
+              position: absolute;
+              left: 50%;
+              top: 49.5%;
+              transform: translate(-50%,-50%);
+              z-index: 3;
+            }
+          }
+
+          .magic-btn-bg {
+            display: none;
+            position: absolute;
+            width: 118px;
+            background: #fff;
+            height: 41px;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            border-radius: 3px;
+          }
+        }
+
+        .mf-pos-r {
+          position: relative;
+          margin: 0 -24px;
+        }
+
+        h3 {
+          font-weight: 400;
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .mf-tip {
+        display: none;
+        position: absolute;
+        top: -14px;
+        right: -14.5px;
+      }
+    }
+  }
+}
+
+body {
+  &.login {
+    &.mpwd-mobile {
+      #login form .mf-login-button-wrapper .mf-qr-code-wrapper {
+        .login-magic-button,
+        .magic-btn-bg {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &.mpwd-mobile {
+    .mf-loading {
+      .login-magic-button,
+      .magic-btn-bg {
+        display: none !important;
+      }
+    }
+  }
+}

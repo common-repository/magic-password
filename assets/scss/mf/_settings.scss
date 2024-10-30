@@ -1,0 +1,41 @@
+@import '../includes/variables';
+
+&-settings {
+  &-box {
+    background-color: $MF_Settings_Box_BackgroundColor;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 auto;
+    padding: 25px 35px;
+
+    @media all and (max-width: $screen-sm-max) {
+      padding: 20px 30px;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+      padding: 20px 25px;
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    &.mf-settings-desc {
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}

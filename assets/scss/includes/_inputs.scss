@@ -1,0 +1,152 @@
+@import 'variables';
+
+.mf-wrap {
+  .mf-radio-input-box {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    float: none;
+    clear: both;
+  }
+
+  .mf-checkbox-input-box {
+    clear: both;
+    display: block;
+    float: none;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 25px;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    &[disabled] {
+      + label {
+        .mf-label-right {
+          color: $MF_Radio_Disabled_Label_Color;
+        }
+      }
+    }
+
+    &:checked {
+      + label {
+        .mf-checked {
+          display: block !important;
+        }
+
+        .mf-unchecked {
+          display: none !important;
+        }
+      }
+    }
+
+    + label {
+      display: block;
+      height: 30px;
+      line-height: 30px;
+
+      .mf-label-left {
+        display: block;
+        float: left;
+        width: 18px;
+      }
+
+      .mf-label-right {
+        display: block;
+        float: left;
+        width: 100%;
+        padding-right: 18px;
+        margin-right: -18px;
+      }
+
+      .mf-input-desc {
+        display: block;
+        float: left;
+        font-size: 13px;
+        line-height: 28px;
+        margin-left: 20px;
+        font-weight: 300;
+        letter-spacing: -.3px;
+        vertical-align: middle;
+        text-align: left;
+
+        strong {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 28px;
+          margin-right: 5px;
+        }
+      }
+
+      i.mf-icon {
+        display: inline-block;
+        vertical-align: sub;
+      }
+
+      .mf-checked {
+        float: left;
+        display: none !important;
+      }
+
+      .mf-unchecked {
+        float: left;
+        display: block !important;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked {
+      + label {
+        color: $MF_Theme_Color;
+        font-weight: 700;
+
+        .mf-checkbox-icon {
+          .mf-checked {
+            display: block !important;
+          }
+
+          .mf-unchecked {
+            display: none !important;
+          }
+        }
+      }
+    }
+
+    + label {
+      display: inline-block;
+      line-height: 24px;
+      vertical-align: middle;
+
+      .mf-checkbox-icon {
+        display: block;
+        float: left;
+        margin-right: 10px;
+
+        .mf-checked {
+          float: left;
+          display: none !important;
+        }
+
+        .mf-unchecked {
+          float: left;
+          display: block !important;
+        }
+      }
+
+      .mf-checkbox-desc {
+        display: block;
+        float: left;
+        line-height: 28px;
+        user-select: none;
+      }
+    }
+  }
+}

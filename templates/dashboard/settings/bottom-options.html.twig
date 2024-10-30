@@ -1,0 +1,52 @@
+<div class="mf-settings mf-content mf-js-bottom-options{% if not is_plugin_enabled %} mf-hidden{% endif %}">
+    <div class="mf-option">
+        <h2>Enable logging for troubleshooting</h2>
+        <h3>For diagnostic purposes, Magic Password contains an option that turns on logging for certain features. These logs can be helpful for support staff who is troubleshooting problems.</h3>
+        <div class="mf-settings-box">
+            <form action="{{ url.make('save-logging', 'mpwd-settings') }}" method="post" class="mf-js-form-logging">
+                {{ url.make_form_nonce('save-logging') | raw }}
+
+                <div class="mf-radio-input-box">
+                    <input type="radio" id="mf-logging-no" name="mf-logging" value="no" {% if not is_logging_allowed %}checked="checked"{% endif %} />
+                    <label for="mf-logging-no">
+                        <span class="mf-label-left">
+                            <span class="mf-unchecked">
+                                <i class="mf-icon mf-icon-radio-unchecked"></i>
+                            </span>
+                            <span class="mf-checked">
+                                <i class="mf-icon mf-icon-radio-checked"></i>
+                            </span>
+                        </span>
+                        <span class="mf-label-right">
+                            <span class="mf-input-desc">
+                                <strong>Disabled</strong>
+                                <br />
+                                I don't want to send any activity logs to Magic Password.
+                            </span>
+                        </span>
+                    </label>
+                </div>
+                <div class="mf-radio-input-box">
+                    <input type="radio" id="mf-logging-yes" name="mf-logging" value="yes" {% if is_logging_allowed %}checked="checked"{% endif %} />
+                    <label for="mf-logging-yes">
+                        <span class="mf-label-left">
+                            <span class="mf-unchecked">
+                                <i class="mf-icon mf-icon-radio-unchecked"></i>
+                            </span>
+                            <span class="mf-checked">
+                                <i class="mf-icon mf-icon-radio-checked"></i>
+                            </span>
+                        </span>
+                        <span class="mf-label-right">
+                            <span class="mf-input-desc">
+                                <strong>Enabled</strong>
+                                <br />
+                                I agree to send activity logs to Magic Password for diagnostic purposes and troubleshooting problems.
+                            </span>
+                        </span>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

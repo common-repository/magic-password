@@ -1,0 +1,55 @@
+{% extends "dashboard/base.html.twig" %}
+
+{% block page %}
+<h1 class="mf-hide"></h1>
+<h2 class="mf-hide"></h2>
+
+{% if is_plugin_enabled %}
+    {% if is_passwordless_login_configured %}
+        <div class="mf-content mf-status-bar-container{% if has_passwordless_role %} has_passwordless_role{% endif %}">
+            {% if is_passwordless_login_enabled %}
+                {% if has_passwordless_role %}
+                    {% set status_bar_class = 'mf-blocked' %}
+                    {% set switch_class = 'mf-switch-btn-blocked' %}
+                {% else %}
+                    {% set status_bar_class = 'mf-enabled' %}
+                    {% set switch_class = 'mf-js-disable-passwordless-login' %}
+                {% endif %}
+            {% else %}
+                {% set status_bar_class = 'mf-disabled' %}
+                {% set switch_class = 'mf-switch-btn-disabled mf-js-enable-passwordless-login' %}
+            {% endif %}
+            <div class="mf-status-bar {{ status_bar_class }}">
+                <div class="mf-status-bar-desc">
+                    <p class="mf-info-enabled">Passwordless login is fully <strong>configured &amp; enabled</strong>.</p>
+                    <p class="mf-info-disabled">Passwordless login is fully <strong>configured but not enabled</strong>.</p>
+                </div>
+                <div class="mf-status-bar-switch">
+                    <div class="mf-status-bar-switch-container">
+                        <span class="mf-status-bar-switch-desc mf-status-enable">ENABLE</span>
+                        <span class="mf-status-bar-switch-button">
+                            <input type="hidden" class="mf-js-csrf-token-for-disable-action" value="{{ wp_create_nonce('disable-passwordless-login') }}" />
+                            <input type="hidden" class="mf-js-csrf-token-for-enable-action" value="{{ wp_create_nonce('enable-passwordless-login') }}" />
+                            <a href="#" class="mf-switch-btn {{ switch_class }}"></a>
+                        </span>
+                        <span class="mf-status-bar-switch-desc mf-status-disable">DISABLE</span>
+                    </div>
+                </div>
+                <div class="mf-clear-fix"></div>
+            </div>
+            {% if has_passwordless_role %}
+                <div class="mf-status-bar-danger">
+                    <p>You are obligated to use Magic Password by Administrator of this WordPress website.</p>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+{% else %}
+    <p>Plugin has been disabled by the administrator of this site.</p>
+{% endif %}
+
+{% include 'modals/success.html.twig' %}
+{% include 'modals/error.html.twig' %}
+{% endblock %}

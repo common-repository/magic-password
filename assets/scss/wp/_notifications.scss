@@ -1,0 +1,34 @@
+@import '../includes/variables';
+
+.mf-wrap {
+  .notice {
+    border-radius: 3px;
+    box-shadow: none;
+
+    &.notice-error {
+      border-left-color: $MF_Delete_BackgroundColor;
+    }
+
+    &.notice-warning,
+    &.notice-info {
+      margin: 5px 0 15px;
+
+      p {
+        margin: .5em 0;
+        padding: 2px;
+      }
+    }
+
+    p {
+      font-size: 12px;
+      letter-spacing: .25px;
+      font-weight: 400;
+      color: $MF_FontColor;
+    }
+
+    a {
+      color: $WP_Notification_Link_Color;
+      text-decoration: underline;
+    }
+  }
+}

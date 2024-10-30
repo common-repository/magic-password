@@ -1,0 +1,26 @@
+<div class="mf-modal-backdrop mf-deletion-confirmation-modal">
+    <div class="mf-modal-backdrop-content">
+        <div class="mf-modal" tabindex="-1">
+            <div class="mf-modal-content">
+                <i class="mf-icon mf-icon-delete-exclamation-mark"></i>
+                <h6>Delete configuration?</h6>
+                <p class="mf-info-paragraph">
+                    <span class="mf-text-line">You will not be able to log in with</span>
+                    <span class="mf-text-line"> your Magic Password app</span>
+                    <span class="mf-text-line"> until you set up new configuration.</span>
+                </p>
+
+                <div class="mf-confirm-buttons">
+                    <form action="{{ url.make('unpair') | raw }}" method="post" class="mf-deletion-confirmation-modal-form">
+                        {{ url.make_form_nonce('unpair') | raw }}
+                        <button type="submit" class="mf-btn mf-warning">
+                            <span>Delete</span>
+                            {% include 'spinner-light.html.twig' %}
+                        </button>
+                        <a href="#" class="mf-js-close-modal">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

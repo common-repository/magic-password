@@ -1,0 +1,6 @@
+<form action="{{ url.make('pair') | raw }}" method="post">
+    <div class="mf-js-configuration-token">
+        {{ url.make_form_nonce('pair') | raw }}
+    </div>
+    {% include 'config-hidden-inputs.html.twig' %}
+</form>

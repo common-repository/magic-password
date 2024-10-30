@@ -1,0 +1,69 @@
+{% extends "dashboard/base.html.twig" %}
+
+{% block page %}
+    <h1 class="mf-hide"></h1>
+    <h2 class="mf-hide"></h2>
+    <div class="mf-notification-margin"></div>
+
+    {% if is_plugin_enabled %}
+        {% set status_bar_class = 'mf-enabled' %}
+        {% set switch_class = 'mf-js-disable-plugin' %}
+    {% else %}
+        {% set status_bar_class = 'mf-disabled' %}
+        {% set switch_class = 'mf-switch-btn-disabled mf-js-enable-plugin' %}
+    {% endif %}
+
+    <div class="mf-content mf-status-bar-container">
+        <div class="mf-status-bar {{ status_bar_class }}">
+            <div class="mf-status-bar-desc">
+                <p class="mf-info-enabled">Magic Password is <strong>enabled</strong>.</p>
+                <p class="mf-info-disabled">Magic Password is <strong>disabled</strong>.</p>
+            </div>
+            <div class="mf-status-bar-switch">
+                <div class="mf-status-bar-switch-container">
+                    <span class="mf-status-bar-switch-desc mf-status-enable">ENABLE</span>
+                    <span class="mf-status-bar-switch-button">
+                        <input type="hidden" class="mf-js-csrf-disable" value="{{ wp_create_nonce('disable-plugin') }}" />
+                        <input type="hidden" class="mf-js-csrf-enable" value="{{ wp_create_nonce('enable-plugin') }}" />
+                        <a href="#" class="mf-switch-btn {{ switch_class }}"></a>
+                    </span>
+                    <span class="mf-status-bar-switch-desc mf-status-disable">DISABLE</span>
+                </div>
+            </div>
+            <div class="mf-clear-fix"></div>
+        </div>
+    </div>
+
+    <div class="mf-settings mf-content mf-js-role-container{% if not is_plugin_enabled %} mf-hidden{% endif %}">
+        <form method="post" class="mf-js-roles-form">
+            <h2>Settings</h2>
+            <h3>Select which roles need to obligatorily use Magic Password to log in:</h3>
+
+            <div class="mf-settings-box">
+                {% for role in roles %}
+                    <div class="mf-checkbox-input-box">
+                        <input type="checkbox" id="{{ role.key }}" name="role" value="{{ role.key }}"{% if role.obligatory %} checked="checked"{% endif %} disabled="disabled"/>
+                        <label for="{{ role.key }}">
+                            <span class="mf-checkbox-icon">
+                                <span class="mf-checked">
+                                    <i class="mf-icon mf-icon-checkbox-checked"></i>
+                                </span>
+                                <span class="mf-unchecked">
+                                    <i class="mf-icon mf-icon-checkbox-unchecked"></i>
+                                </span>
+                            </span>
+                            <span class="mf-checkbox-desc">{{ role.name }}</span>
+                        </label>
+                    </div>
+                {% endfor %}
+
+                <button class="mf-btn mf-settings-save mf-js-save-roles" disabled="disabled">SAVE</button>
+                <p class="mf-settings-desc">Users with the selected roles will not be able to log in using login and password.</p>
+            </div>
+        </form>
+    </div>
+
+    {% include 'dashboard/settings/bottom-options.html.twig' %}
+    {% include 'dashboard/toast.html.twig' %}
+    {% include 'modals/error.html.twig' %}
+{% endblock %}

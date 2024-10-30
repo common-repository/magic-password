@@ -1,0 +1,9 @@
+<div class="wrap mf-wrap">
+    <div class="mf-header">
+        <div class="mf-logo">
+            <img src="{{ assets_url }}images/logo.png" alt="Magic Password">
+        </div>
+    </div>
+    {% block page %}{% endblock %}
+    {% include 'modals/tips.html.twig' %}
+</div>

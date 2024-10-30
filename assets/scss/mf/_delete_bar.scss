@@ -1,0 +1,45 @@
+@import '../includes/variables';
+
+&-delete-bar {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  color: $MF_Delete_Bar_Color;
+  margin-top: 70px;
+
+  &-container {
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  i,
+  span {
+    display: inline-block;
+    line-height: 40px;
+    vertical-align: middle;
+  }
+
+  i {
+    margin-right: 5px;
+
+    @media all and (max-width: $screen-xs) {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  span {
+    font-size: 11px;
+    letter-spacing: .25px;
+
+    @media all and (max-width: $screen-xs) {
+      line-height: 20px;
+      margin-top: 5px;
+    }
+  }
+}

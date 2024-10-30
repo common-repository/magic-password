@@ -1,0 +1,39 @@
+{{ login_header('Log In') }}
+
+<form id="loginform" action="{{ wp_login_url() }}" method="post" class="mf-js-step-2">
+    <div class="mf-tip">
+        <a href="#" class="mf-js-open-tips">
+            <i class="mf-icon mf-icon-scanning-tips-login"></i>
+        </a>
+    </div>
+
+    <div class="mf-login-button-wrapper mf-login">
+        <div class="mf-qr-code-wrapper mf-anim-on mf-loading">
+            <a href="https://magicpassword.io/auth/private-wp_{{ integration_id }}_{{ session_id }}" class="login-magic-button mf-js-handle-focus">
+                <span class="button button-primary button-large">Tap to log in</span>
+            </a>
+            <div class="magic-btn-bg"></div>
+
+            <h3>Scan the code with Magic Password</h3>
+            <img src="{{ qr_code }}" alt="QR code" />
+
+            {% include 'spinner.html.twig' %}
+
+            {% include 'login/hidden-inputs.html.twig' %}
+
+            <input type="hidden" class="mf-action-name" name="action" value="passwordless-login" />
+
+            {% if interim_login %}
+                <input type="hidden" name="interim-login" value="1" />
+            {% endif %}
+        </div>
+    </div>
+</form>
+
+<button class="mf-btn mf-reset-config mf-js-open-reset-confirmation">Click here if you want to reset your configuration.</button>
+
+{% include 'modals/error.html.twig' %}
+{% include 'modals/tips.html.twig' %}
+{% include 'modals/reset-confirmation.html.twig' %}
+
+{{ login_footer() }}

@@ -1,0 +1,126 @@
+@import '../includes/variables';
+
+&-config-step-2-container {
+  width: 200%;
+  transform: translateX(-25%);
+
+  @media all and (max-width: $screen-xs-max) {
+    width: auto;
+    transform: none;
+  }
+
+  & + .mf-modal-backdrop + .mf-modal-backdrop + #backtoblog {
+    text-align: center;
+  }
+}
+
+&-config-step-2 {
+  height: auto;
+  overflow: hidden;
+
+  .col {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 50%;
+
+    @media all and (max-width: $screen-xs-max) {
+      float: none;
+      width: auto;
+    }
+  }
+
+  .mp-logo {
+    display: inline-block;
+    height: auto;
+    margin: 45px 0 35px;
+    width: 135px;
+
+    @media all and (max-width: $screen-xs-max) {
+      margin: 0 0 15px;
+    }
+  }
+
+  .mf-config-desc {
+    display: block !important;
+
+    .mf-text-line {
+      @media all and (max-width: $screen-xs-max) {
+        display: block;
+      }
+    }
+
+    strong {
+      color: $MF_Theme_Color;
+      position: relative;
+
+      .mf-login-arrow {
+        position: absolute;
+        left: 100%;
+        bottom: 100%;
+        z-index: 2;
+
+        @media all and (max-width: $screen-xs-max) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .mf-stores-download {
+    height: auto;
+    margin-top: 35px;
+    overflow: hidden;
+
+    @media all and (max-width: $screen-xs-max) {
+      margin-top: 15px;
+    }
+
+    a {
+      display: inline-block;
+
+      @media all and (max-width: $screen-xs-max) {
+        width: 100%;
+        text-align: center;
+      }
+
+      &:first-of-type {
+        margin-right: 10px;
+
+        @media all and (max-width: $screen-xs-max) {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+
+      i {
+        @media all and (max-width: $screen-xs-max) {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .mf-qr-code-wrapper {
+    float: right;
+    width: 90%;
+
+    @media all and (max-width: $screen-xs-max) {
+      float: none;
+      width: 100%;
+    }
+
+    .login-magic-button {
+      @media all and (max-width: $screen-xs-max) {
+        top: 0 !important;
+      }
+    }
+
+    .magic-btn-bg {
+      @media all and (max-width: $screen-xs-max) {
+        top: 49.5% !important;
+        width: 150px !important;
+      }
+    }
+  }
+}

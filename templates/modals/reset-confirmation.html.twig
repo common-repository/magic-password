@@ -1,0 +1,31 @@
+<div class="mf-modal-backdrop mf-reset-confirmation-modal">
+    <div class="mf-modal-backdrop-content">
+        <div class="mf-modal" tabindex="-1">
+            <div class="mf-modal-content">
+                <i class="mf-icon mf-icon-delete-exclamation-mark"></i>
+                <h6>Reset configuration?</h6>
+                <p class="mf-info-paragraph">
+                    <span class="mf-text-line">I want to reset my Magic Password configuration.</span>
+                </p>
+
+                <div class="mf-confirm-buttons">
+                    <form action="{{ wp_login_url() }}" method="post" class="mf-deletion-confirmation-modal-form">
+                        {{ url.make_form_nonce('configuration-reset') | raw }}
+                        <input type="hidden" class="mf-action-name" name="action" value="configuration-reset" />
+
+                        {% if interim_login %}
+                            <input type="hidden" name="interim-login" value="1" />
+                        {% endif %}
+
+                        <button type="submit" class="mf-btn mf-warning">
+                            <span>Reset</span>
+                            {% include 'spinner-light.html.twig' %}
+                        </button>
+                    </form>
+
+                    <a href="#" class="mf-js-close-modal">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

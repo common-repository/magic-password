@@ -1,0 +1,87 @@
+// WordPress
+$WP_Login_Button_BackgroundColor: #0b132b;
+$WP_Login_Button_Color: #fff;
+
+$WP_Notification_BackgroundColor: #ffffff;
+$WP_Notification_BorderColor: #dc3232;
+$WP_Notification_ShadowColor: rgba(0, 0, 0, .1);
+$WP_Notification_Link_Color: #000;
+
+// Magic Password
+$MF_FontFamily: 'Poppins', sans-serif;
+$MF_FontColor: #0b132b;
+
+$MF_Radio_Disabled_Label_Color: #888888;
+
+$MF_QR_Border: #b1aeb7;
+
+$MF_Theme_Color: #4c2f87;
+
+$MF_FontColor_Disable_MF: #fff;
+$MF_BackgroundColor_Disable_MF: #e64147;
+
+$MF_Delete_BackgroundColor: #eb1c23;
+$MF_Delete_Color: #fff;
+
+$MF_BackgroundColor_Disabled: #b1aeb7;
+
+$MF_FontColor_Action: #fff;
+
+$MF_Step_BackgroundColor: #fff;
+$MF_Step_ParagraphColor: #363b41;
+$MF_Step_HeaderColor: #202225;
+$MF_Step_MutedColor: #58555a;
+
+$MF_Modal_BackgroundColor: #fff;
+$MF_Modal_Backdrop_BackgroundColor: rgba(0, 0, 0, 0.6);
+$MF_Modal_Error_Color: #7a7a7a;
+
+$MF_Delete_Bar_Color: #9d9c9d;
+$MF_Magic_Button_Color: #fff;
+
+$MF_Settings_Box_BackgroundColor: #fff;
+$MF_Settings_Save_Color: #fff;
+
+$MF_StatusBar_BackgroundColor: #fff;
+$MF_StatusBar_Switch_Active_Color: #202225;
+$MF_StatusBar_Switch_Inactive_Color: #888888;
+$MF_StatusBar_Switch_Disable_Color: #cfcfcf;
+$MF_StatusBar_Danger_Color: #ea2038;
+
+$MF_Toast_Background_Color: #32383e;
+$MF_Toast_Text_Color: #fff;
+$MF_Toast_Undo_Link_Color: #66a3ff;
+$MF_Toast_Close_Button_Color: #61676e;
+$MF_Toast_Tick_Color: #31c153;
+
+$MF_Switch_Btn_Color: #51DA56;
+$MF_Switch_Btn_Disabled_Color: #90938f;
+$MF_Switch_Btn_Blocked_Color: #d3d4d2;
+
+// Bootstrap
+$screen-xs:         480px;
+$screen-xs-min:     $screen-xs;
+$screen-phone:      $screen-xs-min;
+
+$screen-sm:         768px;
+$screen-sm-min:     $screen-sm;
+$screen-tablet:     $screen-sm-min;
+
+$screen-md:         992px;
+$screen-md-min:     $screen-md;
+$screen-desktop:    $screen-md-min;
+
+$screen-lg:         1200px;
+$screen-lg-max:     $screen-lg;
+$screen-lg-min:     $screen-lg;
+$screen-lg-desktop: $screen-lg-min;
+
+$screen-xs-max:     ($screen-sm-min - 1);
+$screen-sm-max:     ($screen-md-min - 1);
+$screen-md-max:     ($screen-lg-min - 1);
+
+// Mobile 360
+$screen-360:        360px;
+
+// WP RWD
+$screen-wp:         782px;

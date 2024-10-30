@@ -1,0 +1,45 @@
+@import '../includes/variables';
+
+&-option {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 90px;
+
+  @media all and (max-width: $screen-sm-max) {
+    margin-top: 70px;
+  }
+
+  @media all and (max-width: $screen-wp) {
+    text-align: center;
+  }
+
+  @media all and (max-width: $screen-xs-max) {
+    margin-top: 50px;
+  }
+
+  @media all and (max-width: $screen-xs) {
+    margin-top: 30px;
+  }
+
+  h5 {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    margin: 0 0 35px 40px;
+
+    @media all and (max-width: $screen-wp) {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  .mf-option-disabled {
+    & + label {
+      pointer-events: none;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@import '../includes/variables';
+
+&-header {
+  position: relative;
+  width: 100%;
+  height: 62px;
+  margin-top: 20px;
+  
+  @media all and (max-width: $screen-wp) {
+    width: 95%;
+    max-width: 720px;
+    margin: 20px auto 0 auto;
+  }
+
+  @media all and (max-width: $screen-xs) {
+    text-align: center;
+  }
+
+  @media all and (max-width: 400px) {
+    overflow: hidden;
+  }
+
+  &-info {
+    position: relative;
+    height: 25px;
+    line-height: 25px;
+    z-index: 2;
+
+    @media all and (max-width: $screen-xs) {
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+
+    .list-inline {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 26px;
+
+      li {
+        line-height: 26px;
+
+        p {
+          line-height: 26px;
+        }
+      }
+    }
+  }
+
+  &-disable {
+    display: inline-block;
+    float: right;
+
+    @media all and (max-width: $screen-xs) {
+      float: none;
+      margin-top: 10px;
+    }
+  }
+
+  &-content {
+    padding-top: 42px;
+    line-height: 25px;
+  }
+
+  .mf-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    @media all and (max-width: $screen-sm) {
+      position: static;
+      left: auto;
+      top: auto;
+      display: inline-block;
+    }
+
+    img {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      display: block;
+      transform: scale(.5);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+    }
+  }
+}

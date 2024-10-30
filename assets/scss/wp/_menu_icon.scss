@@ -1,0 +1,14 @@
+li#toplevel_page_mpwd-settings.toplevel_page_mpwd-settings {
+  > a {
+    .wp-menu-image {
+      &::before {
+        display: inline-block;
+        content: ' ';
+        background-size: 20px 20px;
+        background: url('../svg/icon.svg') no-repeat center center;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

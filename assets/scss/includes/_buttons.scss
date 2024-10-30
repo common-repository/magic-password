@@ -1,0 +1,249 @@
+@import 'variables';
+
+.mf-btn {
+  @extend .mf-anim-on;
+  display: inline-block;
+  border: 0;
+  border-radius: 4px;
+  height: 25px;
+  line-height: 24px;
+  width: auto;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 0 16px;
+  letter-spacing: .5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+
+  span {
+    transition: none !important;
+  }
+
+  &.mf-btn-disabled {
+    pointer-events: none;
+    cursor: default;
+    background: $MF_BackgroundColor_Disabled !important;
+  }
+
+  &.mf-btn-error {
+    color: $MF_FontColor_Disable_MF !important;
+    background: $MF_BackgroundColor_Disable_MF;
+
+    &:hover {
+      background: darken($MF_BackgroundColor_Disable_MF, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.mf-enable {
+    color: $MF_FontColor_Disable_MF !important;
+    background: $MF_Theme_Color;
+
+    &:hover {
+      background: darken($MF_Theme_Color, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.mf-save {
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+
+  &.mf-action {
+    display: block;
+    height: 40px;
+    line-height: 39px;
+    color: $MF_FontColor_Action;
+    background: $MF_Theme_Color;
+    margin: 50px auto 0 auto;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: .25px;
+    padding: 0 30px;
+
+    &:hover {
+      background: darken($MF_Theme_Color, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.mf-show-qr {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: $MF_FontColor_Action;
+    background: $MF_Theme_Color;
+    margin-top: 10px;
+    padding: 0 25px;
+
+    @media all and (max-width: $screen-wp) {
+      margin: 15px auto 0 auto;
+    }
+
+    &:hover {
+      background: darken($MF_Theme_Color, 5%);
+      cursor: pointer
+    }
+  }
+
+  &.mf-warning {
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    padding: 0 30px;
+    font-size: 15px;
+    letter-spacing: .25px;
+    font-weight: 400;
+    margin-right: 30px;
+    color: $MF_Delete_Color !important;
+    background: $MF_Delete_BackgroundColor;
+
+    &:hover {
+      background: darken($MF_Delete_BackgroundColor, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.mf-login {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 40px;
+    line-height: 39px;
+    border-radius: 0;
+    font-size: 13px;
+    letter-spacing: .25px;
+    font-weight: 400;
+    background: $WP_Login_Button_BackgroundColor;
+    color: $WP_Login_Button_Color;
+
+    &.mf-normal-login {
+      top: 40px;
+      display: none;
+    }
+
+    &:hover {
+      background: lighten($WP_Login_Button_BackgroundColor, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.mf-reset-config {
+    height: 40px;
+    line-height: 39px;
+    border-radius: 0;
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-top: -40px;
+    display: block;
+    background: $WP_Login_Button_BackgroundColor;
+    color: $WP_Login_Button_Color;
+    width: 100%;
+
+    &:hover {
+      background: lighten($WP_Login_Button_BackgroundColor, 5%);
+      cursor: pointer;
+    }
+  }
+
+  &.magic-button {
+    background-color: $MF_Theme_Color;
+    color: $MF_Magic_Button_Color !important;
+    display: inline-block;
+    font-size: 10px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    width: auto;
+  }
+
+  &.mf-settings-save {
+    background-color: $MF_Theme_Color;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    color: $MF_Settings_Save_Color;
+    font-size: 11px;
+    font-weight: 300;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding: 0 37.5px;
+    text-transform: uppercase;
+  }
+
+  &.mf-reloading {
+    .mf-sk-circle {
+      display: block;
+    }
+
+    span {
+      visibility: hidden;
+    }
+  }
+
+  .mf-sk-circle {
+    display: none;
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px !important;
+    margin-top: -10px !important;
+  }
+}
+
+.mf-link-disabled {
+  pointer-events: none;
+  user-select: none;
+}
+
+.mf-switch-btn {
+  border: 2px solid $MF_Switch_Btn_Color;
+  border-radius: 14px;
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  position: relative;
+  transition: all .5s ease-in-out;
+  width: 48px;
+
+  &.mf-switch-btn-disabled {
+    border-color: $MF_Switch_Btn_Disabled_Color;
+
+    &::after {
+      background-color: $MF_Switch_Btn_Disabled_Color;
+      transform: translateX(100%) translateY(-50%) perspective(1px);
+    }
+  }
+
+  &.mf-switch-btn-blocked {
+    border-color: $MF_Switch_Btn_Blocked_Color;
+    pointer-events: none;
+    user-select: none;
+
+    &::after {
+      background-color: $MF_Switch_Btn_Blocked_Color;
+      transform: translateX(0) translateY(-50%) perspective(1px);
+    }
+  }
+
+  &::after {
+    content: '';
+    background-color: $MF_Switch_Btn_Color;
+    border-radius: 50%;
+    display: block;
+    height: 19px;
+    left: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(0) translateY(-50%) perspective(1px);
+    transition: all .5s ease-in-out;
+    width: 19px;
+    will-change: transform;
+  }
+}

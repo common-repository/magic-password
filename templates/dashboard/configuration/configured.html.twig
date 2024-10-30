@@ -1,0 +1,50 @@
+{% extends "dashboard/configuration/configuration-base.html.twig" %}
+
+{% block content %}
+    <h1 class="mf-text-center"><strong>Configuration:</strong></h1>
+
+    <div class="mf-content">
+        <div class="mf-step">
+            <div class="mf-step-left">
+                <div class="mf-qr-code-wrapper">
+                    {% include 'dashboard/configuration/pair-form.html.twig' %}
+
+                    <img src="{{ assets_url }}images/qr-placeholder.png" alt="Magic Code Placeholder" class="mf-qr-code-placeholder">
+                    <img src="{{ qr_code }}" alt="Magic Code" class="mf-qr-code mf-qr-code-hide" />
+
+                    {% include 'spinner.html.twig' %}
+                </div>
+            </div>
+            <div class="mf-step-right">
+                <div class="mf-step-right-content">
+                    <h4>Pair another device with this plugin</h4>
+                    <p class="mf-step-desc">Scan Magic Code with your Magic Password app<br />to connect another device.</p>
+                    <p class="mf-step-desc mf-step-desc-additional">Or use the Magic Button<br />to configure from this device.</p>
+                    {% include 'dashboard/configuration/magic-button.html.twig' %}
+                    <button class="mf-btn mf-show-qr mf-js-show-qr">SHOW MAGIC CODE</button>
+                </div>
+
+                <div class="mf-step-right-bottom">
+                    <a href="#" class="mf-scanning-tips mf-js-open-tips">
+                        <i class="mf-icon mf-icon-scanning-tips"></i>
+                        <span>HOW DO I SCAN A MAGIC CODE?</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% include 'dashboard/configuration/bottom-options.html.twig' %}
+    </div>
+
+    <div class="mf-delete-bar-container">
+        <div class="mf-delete-bar">
+            <a href="#" class="mf-js-delete-config">
+                <i class="mf-icon mf-icon-delete"></i>
+                <span>Click here to delete your configuration and set up a new one.</span>
+            </a>
+        </div>
+    </div>
+
+    {% include 'dashboard/toast.html.twig' %}
+    {% include 'modals/deletion-confirmation.html.twig' %}
+{% endblock %}

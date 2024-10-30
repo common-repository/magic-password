@@ -1,0 +1,57 @@
+{{ login_header('Configure Magic Password') }}
+
+<form action="{{ wp_login_url() }}" method="post" class="mf-js-login-config-qr-code-form mf-config-step-2-container mf-js-step-2">
+    <div class="mf-tip">
+        <a href="#" class="mf-js-open-tips">
+            <i class="mf-icon mf-icon-scanning-tips-login"></i>
+        </a>
+    </div>
+
+    <div class="mf-login-button-wrapper mf-login mf-config-step-2">
+        <div class="col">
+            <img src="{{ assets_url }}images/logo.png" alt="Magic Password" class="mp-logo">
+            <p class="mf-config-desc">
+                <span class="mf-text-line">Get Magic Password </span>
+                <span class="mf-text-line">
+                    mobile app to scan
+                    <strong>
+                        Magic Code
+                        <img src="{{ assets_url }}images/login-arrow.png" alt="Magic Password Arrow" class="mf-login-arrow">
+                    </strong>
+                </span>
+                <span class="mf-text-line">and log in securely to your </span>
+                <span class="mf-text-line">WordPress account.</span>
+            </p>
+            <div class="mf-stores-download">
+                <a href="https://play.google.com/store/apps/details?id=io.magicpassword" target="_blank" rel="noopener"><i class="mf-icon mf-icon-google-play"></i></a>
+                <a href="https://itunes.apple.com/us/app/magic-password-forget-your-password/id1240404220?mt=8" target="_blank" rel="noopener"><i class="mf-icon mf-icon-app-store"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mf-qr-code-wrapper mf-anim-on mf-loading">
+                <a href="https://magicpassword.io/config/private-wp_{{ integration_id }}_{{ session_id }}?s={{ totp_secret }}&m={{ mobile_secret }}&u={{ login }}"
+                   class="login-magic-button mf-js-handle-focus">
+                    <span class="button button-primary button-large">Tap to configure</span>
+                </a>
+                <div class="magic-btn-bg"></div>
+
+                <img src="{{ qr_code }}" alt="QR code" />
+
+                {% include 'spinner.html.twig' %}
+
+                {% include 'config-hidden-inputs.html.twig' %}
+                <input type="hidden" class="mf-action-name" name="action" value="login-configuration" />
+
+                {% if interim_login %}
+                    <input type="hidden" name="interim-login" value="1" />
+                {% endif %}
+            </div>
+        </div>
+        <div class="mf-clear-fix"></div>
+    </div>
+</form>
+
+{% include 'modals/error.html.twig' %}
+{% include 'modals/tips.html.twig' %}
+
+{{ login_footer() }}

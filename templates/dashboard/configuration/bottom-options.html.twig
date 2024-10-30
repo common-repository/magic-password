@@ -1,0 +1,49 @@
+<div class="mf-option mf-js-bottom-options{% if not is_passwordless_login_enabled %} mf-hidden{% endif %}">
+    <h5>Make Magic Password the only authentication option:</h5>
+    <form action="{{ url.make('set-obligatoriness') | raw }}" method="post" class="mf-settings-box mf-js-bottom-options">
+        {{ url.make_form_nonce('set-obligatoriness') | raw }}
+
+        <div class="mf-radio-input-box">
+            <input type="radio" id="mf-only-no" name="mf-only" value="no" checked="checked" disabled="disabled" class="mf-option-disabled" />
+            <label for="mf-only-no">
+                <span class="mf-label-left">
+                    <span class="mf-unchecked">
+                        <i class="mf-icon mf-icon-radio-unchecked"></i>
+                    </span>
+                    <span class="mf-checked">
+                        <i class="mf-icon mf-icon-radio-checked"></i>
+                    </span>
+                </span>
+                <span class="mf-label-right">
+                    <span class="mf-input-desc">
+                        <strong>No</strong>
+                        <br />
+                        You can log in with Magic Password and your WordPress login and password.
+                    </span>
+                </span>
+            </label>
+        </div>
+        <div class="mf-radio-input-box">
+            <input type="radio" id="mf-only-yes" name="mf-only" value="yes" disabled="disabled" class="mf-option-disabled" />
+            <label for="mf-only-yes" class="mf-only-yes-label">
+                <span class="mf-label-left">
+                    <span class="mf-unchecked">
+                        <i class="mf-icon mf-icon-radio-unchecked"></i>
+                    </span>
+                    <span class="mf-checked">
+                        <i class="mf-icon mf-icon-radio-checked"></i>
+                    </span>
+                </span>
+                <span class="mf-label-right">
+                    <span class="mf-input-desc">
+                        <strong>Yes</strong>(recommended)
+                        <br />
+                        You can log in only with Magic Password. Standard login and password are disabled for your account.
+                        <br />
+                        Please be careful with this option and make sure you have a backup device with Magic Password installed.
+                    </span>
+                </span>
+            </label>
+        </div>
+    </form>
+</div>
